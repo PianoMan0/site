@@ -842,7 +842,6 @@ function Page({
               stars={stars.onboard.stargazerCount}
             />
             <Slack slackKey={slackKey} data={slackData} events={events} />
-            <Pizza />
           </Box>
         </Box>
         <Box>
