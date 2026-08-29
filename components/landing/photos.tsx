@@ -56,6 +56,7 @@ const photos = [
           style={{ height: 56, width: "auto", display: "block" }}
         />
         <Image
+          className="here-photo-logo--invert"
           src={"https://cdn.hackclub.com/019db857-7e65-75fc-b1ec-949cf8cecb55/heroLogoJuice.webp"}
           alt="Juice"
           width={100}
@@ -83,8 +84,7 @@ export async function HerePhotosSection() {
         paddingRight: "clamp(24px, 14.29%, 220px)",
       }}
     >
-      {/* Tagline */}
-      <p
+      <h2
         style={{
           fontFamily: "var(--font-phantom)",
           fontSize: 20,
@@ -105,7 +105,7 @@ export async function HerePhotosSection() {
         >
           {t("photosYoutube")}
         </a>
-      </p>
+      </h2>
 
       {/* 3-column photo + logo + caption grid */}
       <div
@@ -161,6 +161,10 @@ export async function HerePhotosSection() {
         .here-photos-youtube-link:hover,
         .here-photos-youtube-link:focus-visible {
           text-decoration: underline !important;
+        }
+
+        html.dark .here-photo-logo--invert {
+          filter: invert(1);
         }
 
         @media (max-width: 640px) {

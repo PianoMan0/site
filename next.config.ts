@@ -1,6 +1,5 @@
 import type { NextConfig } from "next";
 import { execSync } from "node:child_process";
-import { withBotId } from "botid/next/config";
 import createNextIntlPlugin from "next-intl/plugin";
 
 const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
@@ -22,10 +21,19 @@ const getCommitSha = (): string => {
 };
 
 const nextConfig: NextConfig = {
+  output: process.env.VERCEL ? undefined : "standalone",
   trailingSlash: false,
   productionBrowserSourceMaps: true, // source maps are great for oss :)
   env: {
     NEXT_PUBLIC_COMMIT_SHA: getCommitSha(),
+  },
+  async headers() {
+    return [
+      {
+        source: "/:path([^.]*)",
+        headers: [{ key: "Vary", value: "Accept" }],
+      },
+    ];
   },
   async redirects() {
     return [
@@ -224,6 +232,14 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       {
+        source: "/index.md",
+        destination: "/api/markdown",
+      },
+      {
+        source: "/:path(.*)\\.md",
+        destination: "/api/markdown/:path",
+      },
+      {
         source: "/fiscal-sponsorship/mobile-app/",
         destination: "/fiscal-sponsorship/mobile/",
       },
@@ -292,4 +308,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default withBotId(withNextIntl(nextConfig));
+export default withNextIntl(nextConfig);

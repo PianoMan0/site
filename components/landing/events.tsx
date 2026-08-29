@@ -1,5 +1,5 @@
 "use client";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
@@ -27,6 +27,8 @@ function SkeletonCard() {
 function EventCard({ program }: { program: AirtableProgram }) {
   const t = useTranslations("Home");
   const tc = useTranslations("Common");
+  const tp = useTranslations("Programs");
+  const locale = useLocale();
   const wrapperRef = useRef<HTMLDivElement>(null);
   // endDate may be null for indefinite programs
   const endDate = program.endDate ? parseLocalDate(program.endDate) : null;
@@ -55,19 +57,21 @@ function EventCard({ program }: { program: AirtableProgram }) {
   if (irlStart) {
     const start = parseLocalDate(irlStart);
     const end = irlEnd ? parseLocalDate(irlEnd) : null;
-    const month = start.toLocaleDateString("en-GB", { month: "short" });
+    const month = start.toLocaleDateString(locale, { month: "short" });
     const year = start.getFullYear();
     if (!end || irlStart === irlEnd) {
       badgeLabel = `${start.getDate()} ${month} ${year}`;
     } else if (start.getMonth() === end.getMonth() && start.getFullYear() === end.getFullYear()) {
       badgeLabel = `${start.getDate()}–${end.getDate()} ${month} ${year}`;
     } else {
-      badgeLabel = `${start.getDate()} ${start.toLocaleDateString("en-GB", { month: "short" })} – ${end.getDate()} ${end.toLocaleDateString("en-GB", { month: "short" })} ${end.getFullYear()}`;
+      badgeLabel = `${start.getDate()} ${start.toLocaleDateString(locale, { month: "short" })} – ${end.getDate()} ${end.toLocaleDateString(locale, { month: "short" })} ${end.getFullYear()}`;
     }
   } else if (endDate) {
-    badgeLabel = `Ends ${endDate.toLocaleDateString("en-GB", { day: "numeric", month: "short" })}`;
+    badgeLabel = tp("ends", {
+      date: endDate.toLocaleDateString(locale, { day: "numeric", month: "short" }),
+    });
   } else {
-    badgeLabel = "Ongoing";
+    badgeLabel = tp("statusOngoing");
   }
 
   return (
@@ -173,7 +177,7 @@ function EventCard({ program }: { program: AirtableProgram }) {
             unoptimized
           />
         ) : (
-          <h2
+          <h3
             style={{
               position: "relative",
               zIndex: 1,
@@ -188,7 +192,7 @@ function EventCard({ program }: { program: AirtableProgram }) {
             }}
           >
             {program.name}
-          </h2>
+          </h3>
         )}
 
         {/* Description */}
@@ -377,8 +381,7 @@ export function EventsSection({
         }}
       />
 
-      {/* Headline — right-aligned */}
-      <div
+      <h2
         style={{
           textAlign: "right",
           marginBottom: 4,
@@ -387,8 +390,9 @@ export function EventsSection({
           zIndex: 1,
         }}
       >
-        <p
+        <span
           style={{
+            display: "block",
             fontFamily: "var(--font-zarathustra)",
             fontSize: 40,
             lineHeight: 1,
@@ -398,8 +402,8 @@ export function EventsSection({
           }}
         >
           {t("eventsTitle")}
-        </p>
-        <p
+        </span>
+        <span
           style={{
             fontFamily: "var(--font-zarathustra)",
             fontSize: 40,
@@ -415,8 +419,8 @@ export function EventsSection({
           }}
         >
           {t("eventsTitleAccent")}
-        </p>
-      </div>
+        </span>
+      </h2>
 
       {/* Subtext — right-aligned */}
       <p

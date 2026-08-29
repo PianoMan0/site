@@ -3,11 +3,10 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import PlausibleProvider from "next-plausible";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SkipToMainLink } from "@/components/SkipToMainLink";
 import { routing, getLocaleDomain } from "@/i18n/routing";
 import { phantomSans, zarathustra, cormorant, geologica } from "../fonts";
+import { themesrc } from "../theme-script";
 import "../globals.css";
 
 type Props = {
@@ -32,13 +31,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       languages: {
         en: "https://hackclub.com",
         ru: "https://ru.hackclub.com",
+        fr: "https://fr.hackclub.com",
+        de: "https://de.hackclub.com",
+        es: "https://es.hackclub.com",
         "x-default": "https://hackclub.com",
       },
     },
   };
 }
-
-const themesrc = `(function(){try{var s=localStorage.getItem('hc-site-theme'),t=s==='dark'||s==='light'?s:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'),r=document.documentElement;if(t==='dark')r.classList.add('dark');r.style.colorScheme=t;}catch(_){}})();`;
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
@@ -53,6 +53,32 @@ const organizationJsonLd = {
     "https://www.instagram.com/starthackclub",
     "https://en.wikipedia.org/wiki/Hack_Club",
     "https://www.wikidata.org/wiki/Q98127305",
+  ],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "212 Battery St",
+    addressLocality: "Burlington",
+    addressRegion: "VT",
+    postalCode: "05401",
+    addressCountry: "US",
+  },
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      email: "team@hackclub.com",
+      telephone: "+1-855-625-4225",
+      areaServed: "Worldwide",
+      availableLanguage: ["English"],
+    },
+    {
+      "@type": "ContactPoint",
+      contactType: "media relations",
+      email: "christina@hackclub.com",
+      url: "https://hackclub.com/press",
+      areaServed: "Worldwide",
+      availableLanguage: ["English"],
+    },
   ],
 };
 
@@ -86,8 +112,6 @@ export default async function LocaleLayout({ children, params }: Props) {
           <PlausibleProvider src="https://plausible.io/js/pa-Fxh-6GHJlpUS4AXISXi-C.js">
             <SkipToMainLink />
             {children}
-            <Analytics />
-            <SpeedInsights />
           </PlausibleProvider>
         </NextIntlClientProvider>
       </body>

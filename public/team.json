@@ -285,9 +285,10 @@
   {
     "name": "Luke Oldenburg",
     "department": "HCB",
-    "role": "Engineering Contributor",
+    "staff": true,
+    "role": "Engineering Gap Year",
     "acknowledged": false,
-    "bio": " ",
+    "bio": "",
     "slackId": "U06MYDS2LHX",
     "email": "luke",
     "website": "",
@@ -707,9 +708,9 @@
   {
     "name": "Rowan",
     "department": "HQ",
-    "role": "Engineering & Security",
+    "role": "Engineering",
     "acknowledged": false,
-    "bio": "Rowan (who goes by Echo online) is a full stack programmer from the United States. They helped run Summer of Making and now work on engineering and security for Hack Club HQ. In their free time, they enjoy politics, playing video games, and listening to music.",
+    "bio": "Rowan (who goes by Echo online) is a full stack programmer from the United States. They helped run Summer of Making and now work on fraud prevention, engineering, and security for Hack Club HQ. In their free time, they enjoy politics, playing video games, and listening to music.",
     "slackId": "U080A3QP42C",
     "email": "echo",
     "website": "https://3kh0.net",
@@ -878,12 +879,12 @@
   {
     "name": "Lynn Beato",
     "department": "HQ",
-    "role": "Club Operations and Community Relations",
+    "role": "Clubs Resource Tech",
     "acknowledged": false,
-    "bio": "Lynn is a 14 year old Hack Clubber from Portugal, who got involved with Clubs in November 2024, when she started her club at her school. She's also ran her own Scrapyard event, in Lisbon, as well as a Daydream event in DC. She can't wait to get more clubs up and running with cool resources!",
+    "bio": "Lynn is a Hack Clubber from Portugal, who got involved with Clubs in November 2024, when she started her club at her school. She's also ran her own Hack Club events in Lisbon and DC. She can't wait to get more clubs up and running with cool resources!",
     "slackId": "U07ULNFPQ4T",
     "email": "lynn",
-    "website": "https://lynn.pt/",
+    "website": "https://headpats.you/",
     "avatar": "https://cachet.hackclub.com/users/U07ULNFPQ4T/r"
   },
   {
@@ -903,11 +904,58 @@
     "department": "HQ",
     "role": "Engineering & Event Operations",
     "acknowledged": false,
-    "bio": "Hey, I'm Meghana. I'm a 16 year old that spends her free time messing around with robots and making PCBs. I made Pathfinder and Hermes, and ran global operations for Daydream",
+    "bio": "Hey, I'm Meghana. I'm a 17 year old that spends her free time messing around with robots and making PCBs. Now, I'm trying to get every teenager in the world to make their first printed circuit board.",
     "slackId": "U06P62WGWAV",
     "email": "meghana",
     "website": "https://meghana.co",
-    "avatar": "https://cachet.hackclub.com/users/U06P62WGWAV/r"
+    "avatar": "https://cachet.hackclub.com/users/U06P62WGWAV/r",
+    "gapyear": true
+  },
+  {
+    "name": "Brendan Reynard",
+    "department": "HQ",
+    "role": "Engineering",
+    "acknowledged": false,
+    "bio": "Brendan is a a 17 year old from the east coast of Canada (PEI!) who likes lower level software and embedded systems. When he's not working on programs for Hack Club, he's cycling, skating, or working on other personal projects.",
+    "slackId": "U08LEHUPSCR",
+    "email": "brendan",
+    "website": "https://breynard.net",
+    "avatar": "https://cdn.hackclub.com/01a04383-f2f2-73cb-8972-58e0b9292dda/beach_pfp.jpeg",
+    "gapyear": true
+  },
+  {
+    "name": "Selena Nguyen",
+    "department": "HQ",
+    "role": "Events & Engineering",
+    "acknowledged": false,
+    "bio": "Selena is a student from Hamilton, Ontario and joined Hack Club through attending Apocalypse in 2024. She loves running events in her community including various hackathons and robotics competitions. In the meantime, she wants to keep learning and teaching others through workshops and programs!",
+    "slackId": "U06U1CBK589",
+    "email": "selena",
+    "avatar": "https://cdn.hackclub.com/01a04385-5835-7a60-86f4-9ccd15151229/image%20(5).png",
+    "gapyear": true
+  },
+  {
+    "name": "Lewin Kelly",
+    "department": "HQ",
+    "role": "Engineering",
+    "acknowledged": false,
+    "bio": "",
+    "slackId": "U07JH9LU1NC",
+    "email": "lewin",
+    "website": "https://heliodex.cf",
+    "avatar": "https://cdn.hackclub.com/01a04386-fbf6-7efc-92ce-0ccf9583b50c/me-square.jpg",
+    "gapyear": true
+  },
+  {
+    "name": "Jolly Wang",
+    "department": "HQ",
+    "role": "Engineering",
+    "acknowledged": false,
+    "bio": "",
+    "slackId": "U08CJCZ2Z9S",
+    "email": "jolly",
+    "avatar": "https://cdn.hackclub.com/01a043a9-1199-7c41-b938-fba1fbedf586/picrew.png",
+    "gapyear": true
   },
   {
     "name": "Celeste Roselli",
@@ -1278,7 +1326,7 @@
   {
     "name": "Spencer McKnight",
     "department": "HQ",
-    "role": "Safeguarding Associate",
+    "role": "Safeguarding",
     "acknowledged": false,
     "bio": "Spencer is a 19 year old who likes volunteering and tumbling, they are going to university for computing and electronic engineering.",
     "slackId": "U08U39SCQAE",
@@ -1296,5 +1344,40 @@
     "email": "lynnj",
     "website": "",
     "avatar": "https://i.ibb.co/qMBwqHwC/lynn-With-AMysterious-Umbrella-Named-Perry.png"
+  },
+  {
+    "name": "Sahil",
+    "department": "Moderation",
+    "role": "Conduct and Moderation",
+    "acknowledged": false,
+    "bio": "",
+    "slackId": "U08PUHSMW4V",
+    "email": "sahil@conduct.hackclub.com",
+    "website": "",
+    "avatar": "https://cdn.hackclub.com/01a022cb-4489-73bb-9132-5db42f4f857c/sahilsquare%20-%20Copy.png"
+  },
+  {
+    "name": "Nick Do",
+    "department": "HQ",
+    "role": "Engineering",
+    "acknowledged": false,
+    "bio": "Nick is an 18-year-old tinkering artist from Texas, USA! It helps run art and hardware programs as a gap year, and in its free time, can be found sewing or drawing.",
+    "slackId": "U06FMCCDS1K",
+    "email": "nick@hackclub.com",
+    "website": "https://sundial.city",
+    "avatar": "https://cdn.hackclub.com/01a043ae-0ba9-7948-a0fb-d3a095abaf9b/08-27-2026-1033-1.png",
+    "gapyear": true
+  },
+  {
+    "name": "Afia Ava",
+    "department": "HQ",
+    "role": "Philanthropy & Engineering",
+    "acknowledged": false,
+    "bio": "Afia is an 18-year-old helping raise funds for Hack Club. She also runs Athena, Hack Club’s girls-only community. In her free time, she enjoys building hardware projects and reading fiction books.",
+    "slackId": "U07RMG2DPQC",
+    "email": "afiaava@hackclub.com",
+    "website": "afiaava.com",
+    "avatar": "https://cdn.hackclub.com/01a0454b-d134-74aa-a4fa-1309ba183701/Headshot%20Afia(1).jpg",
+    "gapyear": true
   }
 ]
